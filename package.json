@@ -1,0 +1,39 @@
+{
+  "name": "stack-debounce",
+  "version": "0.1.0",
+  "description": "Call only the last element in a Promise stack queue interval",
+  "main": "dist/stack-debounce.cjs.js",
+  "unpkg": "dist/stack-debounce.min.js",
+  "cdn": "dist/stack-debounce.min.js",
+  "module": "dist/stack-debounce.m.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "xo",
+    "build": "npx rimraf dist && bili",
+    "release": "yarn test && yarn build && npx release-it"
+  },
+  "author": "Alexandre Bonaventure Geissmann <alexandre@springboardvr.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "bili": "^1.6.5",
+    "eslint-config-rem": "^3.0.0",
+    "gh-pages": "^1.0.0",
+    "tyu": "^1.0.5",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem/prettier",
+    "envs": [
+      "jest"
+    ],
+    "ignores": [
+      "example/**"
+    ]
+  },
+  "jest": {}
+}
