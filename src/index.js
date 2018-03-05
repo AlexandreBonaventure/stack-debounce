@@ -1,13 +1,14 @@
 export default function stackDebounce (fn, debouncer) {
   let queue = []
+  let lastPromise
   let waiting = false
   const resolver = async () => {
     if (!waiting) {
       waiting = true
-      await debouncer()
+      await debouncer(lastPromise)
       waiting = false
       if (queue.length) {
-        queue.pop()()
+        lastPromise = queue.pop()()
         queue = []
       }
     }
