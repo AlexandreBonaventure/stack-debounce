@@ -1,6 +1,6 @@
 {
   "name": "stack-debounce",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Call only the last element in a Promise stack queue interval",
   "main": "dist/stack-debounce.cjs.js",
   "unpkg": "dist/stack-debounce.min.js",
