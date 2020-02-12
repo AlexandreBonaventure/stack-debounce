@@ -5,11 +5,14 @@ export default function stackDebounce (fn, debouncer) {
   const resolver = async () => {
     if (!waiting) {
       waiting = true
-      await debouncer(lastPromise)
-      waiting = false
-      if (queue.length) {
-        lastPromise = queue.pop()()
-        queue = []
+      try {
+        await debouncer(lastPromise)
+      } finally {
+        waiting = false
+        if (queue.length) {
+          lastPromise = queue.pop()()
+          queue = []
+        }
       }
     }
   }
